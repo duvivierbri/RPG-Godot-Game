@@ -3,11 +3,11 @@ var touchingCoffee = false
 var nearCoffee = false
 var canGetCoin = false
 
-func _ready():
-	$Music.play()
-	var new_dialog = Dialogic.start('Opening')
+func _ready(): #Scene setup
+	$Music.play() #plays background music
+	var new_dialog = Dialogic.start('Opening') #Starts dialog
 	add_child(new_dialog)
-	$BlueBody/hint.visible = false
+	$BlueBody/hint.visible = false #Makes instructions over characters head invisible
 
 func _process(delta):
 	walkingCheck()
@@ -21,10 +21,10 @@ func _process(delta):
 
 
 
-func allowCoin(value):
+func allowCoin(value): #allows character to obtain the coin
 	canGetCoin = true
 
-func walkingCheck():
+func walkingCheck(): #plays walking animation when character moves
 	if Input.is_action_pressed("ui_right"):
 		$BlueBody/Blue/AnimationTree/AnimationPlayer.set_current_animation("Walk")
 	elif Input.is_action_pressed("ui_left"):
@@ -36,19 +36,19 @@ func walkingCheck():
 	else:
 		$BlueBody/Blue/AnimationTree/AnimationPlayer.set_current_animation("Idle")
 
-func _on_CoffeeArea_area_entered(area):
+func _on_CoffeeArea_area_entered(area): #checks if character is touching the coffee
 	$BlueBody/hint.visible = true
 	touchingCoffee = true
 	$BlueBody/hint.bbcode_text = "Press Z to interact"
 
-func _on_CoffeeArea_area_exited(area):
+func _on_CoffeeArea_area_exited(area): #checks if character is NOT touching the coffee
 	$BlueBody/hint.visible = false
 	touchingCoffee = false
 
-func _on_changeSceneFlag_area_entered(area):
+func _on_changeSceneFlag_area_entered(area): #changes scene when character moves far enough to the right
 	get_tree().change_scene("res://Scene2.tscn")
 
-func _on_PiggyBank_pressed():
+func _on_PiggyBank_pressed(): #checks if character clicked on the piggy bank and what to do when they do
 	if canGetCoin == true:
 		$PiggyBank.hide()
 
