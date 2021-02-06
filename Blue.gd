@@ -1,17 +1,11 @@
 extends Node2D
 
 var canMove = false
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta): #right, left, up and down movements without the animation
 	var vector = Vector2()
 	if canMove == true:
 		if Input.is_action_pressed("ui_left"):
