@@ -1,3 +1,5 @@
+#This is the code for the tutorial portion of the game. It's the first scene when you press play and teaches the player how to interact with the game through the controls.
+#It also starts the story for the game! :)
 extends Node2D
 var touchingCoffee = false
 var nearCoffee = false
