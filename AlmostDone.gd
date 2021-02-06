@@ -1,3 +1,5 @@
+#This is the code for the second to last scene in the game when the character is approaching his house
+
 extends Node2D
 
 func _ready():
