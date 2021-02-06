@@ -1,3 +1,5 @@
+#This sets up the first Quest where the character needs to complete the level by getting Green's ball back! It's simple - they cannot simply shake the tree. They have to 
+#get a stick first, THEN try to interact with the tree. :)
 extends Node2D
 var touchingGreen = false
 var spokenToGreen = false
