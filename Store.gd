@@ -1,3 +1,5 @@
+#This is the code for the store scene when the character talks to the Orange character... and revieces some good news!! :)
+
 extends Node2D
 var touchingOrange = false
 var spokenToOrange = false
